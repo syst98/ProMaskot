@@ -36,7 +36,7 @@ var infoUsuario
                 document.getElementById("navar").innerHTML+=`
               <div class="container-fluid">
                     <a class="navbar-brand" href="./index.html">
-                      <img src="http://1000marcas.net/wp-content/uploads/2020/02/Walmart-logo.png" alt="imagen-walmart" width="90" height="40">
+                      <img src="https://firebasestorage.googleapis.com/v0/b/sistemainformatics98.appspot.com/o/LOGO5.png?alt=media&token=003c6827-4e91-4e7e-a6b9-c680a77b60c4" alt="imagen-walmart" width="90" height="40">
                     </a>
                     <a class="navbar-brand text-light" href="./promociones.html">Promociones</a>
                     <a class="navbar-brand text-light" href="./estadisticas.html">Estadisticas</a>
@@ -49,7 +49,7 @@ var infoUsuario
                 document.getElementById("navar").innerHTML+=`
                 <div class="container-fluid">
                       <a class="navbar-brand" href="./index.html">
-                        <img src="http://1000marcas.net/wp-content/uploads/2020/02/Walmart-logo.png" alt="imagen-walmart" width="90" height="40">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/sistemainformatics98.appspot.com/o/LOGO5.png?alt=media&token=003c6827-4e91-4e7e-a6b9-c680a77b60c4" alt="imagen-walmart" width="90" height="40">
                       </a>
                       <button class="navbar-brand btn btn btn-link text-light" type="button" onclick="terminaSesión()">Terminar Sesión</button>
                 </div>
