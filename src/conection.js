@@ -31,7 +31,7 @@ var infoUsuario
               nombre.value = usuarioAuth.displayName;
               // @ts-ignore Muestra el avatar registrado en Google.
               avatar.src = usuarioAuth.photoURL;
-              if(usuarioAuth.email==="406474058038.cuponera@gmail.com"){
+              if(usuarioAuth.email==="sistema.informatic.98@gmail.com"){
                 document.getElementById("navar").innerHTML='';
                 document.getElementById("navar").innerHTML+=`
               <div class="container-fluid">
