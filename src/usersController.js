@@ -113,7 +113,7 @@ var validacionUsuario = firebase.auth().onAuthStateChanged(userAuth => {
                       <p class="card-text">${promociones.discount} % de descuento</p>
                       <p class="card-text"><small class="">Desde ${promociones.timeStart.split('T')[0]} ${promociones.timeStart.split('T')[1]} Hasta ${promociones.timeEnd.split("T")[0]} ${promociones.timeEnd.split("T")[1]}</small></p>
                       <div class="row justify-content-md-center">
-                        <p class="btn btn-primary btn-selected">${doc.code}</p>
+                        <p class="bg-white">${promociones.code}</p>
                       </div>
                     </div>
                   </div>
