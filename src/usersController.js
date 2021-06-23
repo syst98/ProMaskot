@@ -30,7 +30,7 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
         <div class="row justify-content-md-center">
             <p class="text-center display-5"><i class="fas fa-tags"></i> Completa tu informacion</p>
         </div>
-         </div>  
+          
          <div class="row">
              <div class="col-md-6">
                  <label class="form-label"><i class="fas fa-tag"></i> Telefono</label>
@@ -44,6 +44,7 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
          <div class="row justify-content-md-center">
          <button class="btn btn-primary">Enviar</button>
          </div>
+         </div> 
         `;
 
     }
