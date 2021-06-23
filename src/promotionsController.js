@@ -105,67 +105,67 @@ promocion.
           isEditable = true
           idPromo = e.target.dataset.id
         }))
-        //Funcion agrega datos a "Usuarios"
-        agregarPromociones.addEventListener("submit", async (e) => {
-          console.log(idPromo)
-          console.log(isEditable);
-          //evita recargo de pagina
-          e.preventDefault();
-          //obtiene valor del campo HTML puntos
-          var nombre = agregarPromociones["nombre"],
-            descripcion = agregarPromociones["descripcion"],
-            descuento = agregarPromociones["descuento"],
-            fechaInicio = agregarPromociones["fechaInicio"],
-            fechaFinal = agregarPromociones["fechaFinal"],
-            codigo = agregarPromociones["codigo"],
-            puntos = agregarPromociones["puntos"],
-            cupones = agregarPromociones["cupones"],
-            nombreArchivo = agregarPromociones["fileName"],
-            archivo = agregarPromociones["file"].files[0];
-          //referencia de archivos
-          var metadata = {
-            contentType: ['image/jpeg'],
-          };
-          var refArch = sg.ref(nombre.value + '/' + nombreArchivo.value);
-          var rute = nombre.value + '/' + nombreArchivo.value
-          //montar archivos
-          await refArch.put(archivo, metadata);
-          cupones = parseInt(cupones.value)
-          //llama a la funcion addUser, para agregar datos
-          if (isEditable == false) {
-            await addPromotion(nombre.value, descripcion.value, descuento.value, fechaFinal.value, fechaInicio.value, codigo.value, puntos.value, cupones, rute)
-          }
-          else{
-             await db.collection("Promociones").doc(idPromo).update({
-             name: nombre.value, 
-             description: descripcion.value, 
-             discount: descuento.value, 
-             timeEnd: fechaFinal.value, 
-             timeStart: fechaInicio.value, 
-             code: codigo.value, 
-             points: puntos.value, 
-             coupons: cupones,
-             used: cupones, 
-             rute
-            })
-            isEditable=false
-          }
-          var nombre = agregarPromociones["nombre"].value = "",
-            descripcion = agregarPromociones["descripcion"].value = "",
-            descuento = agregarPromociones["descuento"].value = "",
-            fechaInicio = agregarPromociones["fechaInicio"].value = "",
-            fechaFinal = agregarPromociones["fechaFinal"].value = "",
-            codigo = agregarPromociones["codigo"].value = "",
-            puntos = agregarPromociones["puntos"].value = "",
-            cupones = agregarPromociones["cupones"].value = "",
-            nombreArchivo = agregarPromociones["fileName"].value = "",
-            archivo = agregarPromociones["file"].value = "";
-
-        })
-
       })
     },
     error => console.error(error));
+
+//Funcion agrega datos a "Usuarios"
+agregarPromociones.addEventListener("submit", async (e) => {
+  console.log(idPromo)
+  console.log(isEditable);
+  //evita recargo de pagina
+  e.preventDefault();
+  //obtiene valor del campo HTML puntos
+  var nombre = agregarPromociones["nombre"],
+    descripcion = agregarPromociones["descripcion"],
+    descuento = agregarPromociones["descuento"],
+    fechaInicio = agregarPromociones["fechaInicio"],
+    fechaFinal = agregarPromociones["fechaFinal"],
+    codigo = agregarPromociones["codigo"],
+    puntos = agregarPromociones["puntos"],
+    cupones = agregarPromociones["cupones"],
+    nombreArchivo = agregarPromociones["fileName"],
+    archivo = agregarPromociones["file"].files[0];
+  //referencia de archivos
+  var metadata = {
+    contentType: ['image/jpeg'],
+  };
+  var refArch = sg.ref(nombre.value + '/' + nombreArchivo.value);
+  var rute = nombre.value + '/' + nombreArchivo.value
+  //montar archivos
+  await refArch.put(archivo, metadata);
+  cupones = parseInt(cupones.value)
+  //llama a la funcion addUser, para agregar datos
+  if (isEditable == false) {
+    await addPromotion(nombre.value, descripcion.value, descuento.value, fechaFinal.value, fechaInicio.value, codigo.value, puntos.value, cupones, rute)
+  }
+  else{
+     await db.collection("Promociones").doc(idPromo).update({
+     name: nombre.value, 
+     description: descripcion.value, 
+     discount: descuento.value, 
+     timeEnd: fechaFinal.value, 
+     timeStart: fechaInicio.value, 
+     code: codigo.value, 
+     points: puntos.value, 
+     coupons: cupones,
+     used: cupones, 
+     rute
+    })
+    isEditable=false
+  }
+  var nombre = agregarPromociones["nombre"].value = "",
+    descripcion = agregarPromociones["descripcion"].value = "",
+    descuento = agregarPromociones["descuento"].value = "",
+    fechaInicio = agregarPromociones["fechaInicio"].value = "",
+    fechaFinal = agregarPromociones["fechaFinal"].value = "",
+    codigo = agregarPromociones["codigo"].value = "",
+    puntos = agregarPromociones["puntos"].value = "",
+    cupones = agregarPromociones["cupones"].value = "",
+    nombreArchivo = agregarPromociones["fileName"].value = "",
+    archivo = agregarPromociones["file"].value = "";
+
+})
 
 
 
