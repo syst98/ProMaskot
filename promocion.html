@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProMaskot promociones</title>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script type="module" src="./src/usersController.js"></script>
+</head>
+<body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <nav class="navbar fixed-top navbar-light bg-dark text-light" id="navar">
+        </nav>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="display: none;">
+        <div class="row justify-content-end">
+            <div class="row justify-content-md-center">
+            <div class="col-md-6 fs-4 text-center align-self-center blue-200">Hola <output id="nombre" style="font-size: 32px;"></output> </div>
+            <figure class="col-md-4 fs-4 justify-content-md-center"><img id="avatar" alt="Avatar"> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p class="lead">
+          <div class="fw-bold border-white bg-white"></div>
+        </p>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="row" id="promocionInfo">                
+            </div>
+        </div>
+        <br>
+    <footer class="text-center">Copyright &copy; 2021 | Sanchez Felix Eduardo.</footer>
+    <br>
+    </div> 
+    
+</body>
+    <script src="./src/conection.js"></script>
+    <script src="./src/components/nav.js"></script>    
+</html>

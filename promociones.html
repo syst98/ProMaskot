@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>ProMaskot promociones</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-light bg-dark text-light" id="navar">
+    </nav>
+    <br>
+    <br>
+    <br>
+    <div class="container" style="display: none;">
+        <div class="row justify-content-end">
+            <div class="row justify-content-md-center">
+            <div class="col-md-6 fs-4 text-center align-self-center blue-200">Hola <output id="nombre" style="font-size: 32px;"></output> </div>
+            <figure class="col-md-4 fs-4 justify-content-md-center"><img id="avatar" alt="Avatar"> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p class="lead">
+          <div class="fw-bold border-white bg-white"></div>
+        </p>
+    </div>
+    </div>
+      <div class="container">
+          <div class="row">
+                <form id="agregarPromociones">
+                    <div class="container">
+                        <div class="row justify-content-md-center">
+                            <p class="text-center display-5"><i class="fas fa-tags"></i> Agregar una promocion</p>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fas fa-tag"></i> Nombre de la promocion</label>
+                            <input type="text" class="form-control" name="nombre" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fas fa-audio-description"></i> Descripción</label>
+                            <input type="text" class="form-control" name="descripcion" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label class="form-label"><i class="fas fa-percent"></i> Descuento</label>
+                            <input type="number" class="form-control" name="descuento" required>
+                        </div>
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="fas fa-asterisk"></i> Codigo de descuento</label>
+                            <input type='text' class="form-control" name='codigo' required />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="fas fa-calendar-day"></i> Fecha Inicio</label>
+                            <input type='datetime-local' class="form-control" name='fechaInicio' required />
+                        </div>
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="fas fa-calendar-day"></i> Fecha Final</label>
+                            <input type='datetime-local' class="form-control" name='fechaFinal' required/>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="far fa-flag"></i> Puntos para adquirir</label>
+                            <input type='number' class="form-control" name='puntos' required/>
+                        </div>
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="fas fa-user-tag"></i> Promociones a otorgar</label>
+                            <input type='number' class="form-control" name='cupones' required/>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="far fa-flag"></i> Nombrar archivo</label>
+                            <input type='text' class="form-control" name='fileName' required/>
+                        </div>
+                        <div class='col-md-6'>
+                            <label class="form-label"><i class="fas fa-user-tag"></i> Agregando un archivo</label>
+                            <input type='file' class="form-control" name='file' accept=".jpg,.png" required/>
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary">Enviar</button>
+            </form>
+            </div>
+            </div>
+            <br>
+            <div>
+                <div class="container">
+                  <div class="row justify-content-md-center">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                        <tr class="text-center">
+                            <th scope="col">Nombre de promocion</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Descuento</th>
+                            <th scope="col">Fecha de inicio</th>
+                            <th scope="col">Fecha final</th>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Puntos</th>
+                            <th scope="col">Cupones</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody id="leerPromociones">
+                        </tbody>  
+                    </table> 
+                  </div>
+                </div>
+              </div> 
+              <br>
+    <footer class="text-center">
+        <p>Copyright &copy; 2021 | Desarrollado por: Sanchez Felix Eduardo Quetzalcoatl. | <a class="text-muted">Version 1.0.1</a></p>
+        <p>Esta pagina no es afiliada a Walmart Mexico, todo nombre, imagen y marca son propiedad de Walmart México</p>
+    </footer>
+    <br> 
+  </body>
+    <script src="./src/conection.js"></script>
+    <script src="./src/promotionsController.js"></script>
+</html>
