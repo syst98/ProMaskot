@@ -1,14 +1,12 @@
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyA14Vc16_jkjUzCWBpjwTy_t-Hwtz2Wt5k",
-    authDomain: "cuponerawal.firebaseapp.com",
-    projectId: "cuponerawal",
-    storageBucket: "cuponerawal.appspot.com",
-    messagingSenderId: "406474058038",
-    appId: "1:406474058038:web:62a527c117af27f3b52b97",
-    measurementId: "G-WEEL5GKJB2"
-  };
-
+var firebaseConfig = {
+  apiKey: "AIzaSyDqFTI_KVaBIpV9588NEb1l8JbS1oSrLI0",
+  authDomain: "sistemainformatics98.firebaseapp.com",
+  projectId: "sistemainformatics98",
+  storageBucket: "sistemainformatics98.appspot.com",
+  messagingSenderId: "746265767794",
+  appId: "1:746265767794:web:c527b3ac6869019ac4f7eb",
+  measurementId: "G-7HMCNHRYMT"
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 //conexion a la bd de firebase
