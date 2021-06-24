@@ -20,10 +20,11 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
 </head>
 <body id="top" class="scrollspy">
-<div class="navbar-fixed">
+<div class="navbar-fixed" id="navar">
   <nav id="nav_f" class="default_color" role="navigation">
-    <div id="navar">
-    </div>
+      <div id="navar">
+
+      </div>
   </nav>
 </div>
 
@@ -33,13 +34,13 @@
     <div class="container">
       <h1 class="text_h center header cd-headline letters type">
       <span>Hola</span> 
-      <span>
+      <span class="cd-words-wrapper waiting">
         <b><output id="nombre" style="font-size: 18px;"></output></b>
       </span>
     </h1>
     <h1 class="text_h center header cd-headline letters type">
       <span><img id="avatar" alt="Avatar"></span> 
-      <span>
+      <span class="cd-words-wrapper waiting">
         <b><figure> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure></b>
       </span>
     </h1>
