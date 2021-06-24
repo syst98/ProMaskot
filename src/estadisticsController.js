@@ -13,8 +13,8 @@ promocion.
   onSnapshot(
   snapshot => {
     usuariosRegistrados.innerHTML +=`
-    <div class="col s12 m6 14">
-    <p class="card-title activator grey-text text-darken-2" style="font-size: 25px;">Promociones</p>
+    <div class="col s12 m6 14 center">
+    <p class="card-title activator grey-text text-darken-2 center" style="font-size: 25px;">Promociones</p>
     <p class="card-title activator text-lighten-4 center" style="font-size: 20px;">${snapshot.size} promociones registradas</p>
   </div>
     `;
@@ -43,8 +43,8 @@ usuario.
   snapshot => {
     console.log(snapshot.size);
     usuariosRegistrados.innerHTML +=`
-    <div class="col s12 m6 14">
-    <p class="card-title activator grey-text text-darken-2" style="font-size: 25px;">Usuarios Registrados</p>
+    <div class="col s12 m6 14 center">
+    <p class="card-title activator grey-text text-darken-2 center" style="font-size: 25px;">Usuarios Registrados</p>
     <p class="card-title activator text-lighten-4 center" style="font-size: 20px;"> ${snapshot.size} usuarios registrados</p>
   </div>
     `;
