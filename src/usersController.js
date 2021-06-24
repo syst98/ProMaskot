@@ -26,10 +26,10 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
     else {
       document.getElementById("agregarUsuarios").innerHTML = '';
       document.getElementById("agregarUsuarios").innerHTML += `
-      <div class="col s12 m4 24 header text_b center">
+      <div class="col s12 m12 24 header text_b center">
                <div class="card">
                   <div class="card-content ">
-                    <span class="card-title activator grey-text text-darken-4">Completa tu informacion</span>
+                    <span class="card-title activator grey-text text-darken-4" style="font-size:32px">Completa tu informacion</span>
                     <div>
                         <label class="form-label grey-text text-darken-4" style="font-size:25px"> Telefono</label>
                         <input type="tel" class="form-control" name="telefono" required style="font-size: 34px;">

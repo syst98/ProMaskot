@@ -11,30 +11,25 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
         <!-- Add Firebase products that you want to use -->
         <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+      <!-- CSS  -->
+  <link href="css/nucleo.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" type="text/css" rel="stylesheet" >
 </head>
-<body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <nav class="navbar fixed-top navbar-light bg-dark text-light" id="navar"></nav>
-    </div>
-    <br>
-    <br>
-    <br>
+<body id="top" class="scrollspy">
+    <div class="navbar-fixed">
+        <nav id="nav_f" class="default_color" role="navigation">
+            <div id="navar">
+      
+            </div>
+          </nav>
+          </div>
     <div class="container" style="display: none;">
         <div class="row justify-content-end">
             <div class="row justify-content-md-center">
             <div class="col-md-6 fs-4 text-center align-self-center blue-200">Hola <output id="nombre" style="font-size: 32px;"></output> </div>
             <figure class="col-md-4 fs-4 justify-content-md-center"><img id="avatar" alt="Avatar"> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure>
         </div>
-        <br>
-        <br>
-        <br>
-        <p class="lead">
-          <div class="fw-bold border-white bg-white"></div>
-        </p>
     </div>
     </div>
     <div class="container-fluid">
@@ -60,10 +55,16 @@
             </div>
         </div>
     </div>  
-    <br>
-    <footer class="text-center">
-        <p>Copyright &copy; 2021 | Desarrollado por: Sanchez Felix Eduardo Quetzalcoatl. | <a class="text-muted">Version 1.0.1</a></p>
-    </footer>
+    
+    <footer id="contact" class="page-footer default_color scrollspy">
+        <div class="container">  
+     <div class="row">
+            <div class="center">
+              <h5 class="white-text">Sanchez Felix Eduardo Quetzalcoatl</h5>
+              <p class="grey-text text-lighten-4">
+                Copyright &copy; 2021 | Programacion WEB | 3NV41 | Version 1.0.1</p>
+            </div>
+      </footer>
 </body>
     <script src="./src/conection.js"></script>
     <script src="./src/estadisticsController.js"></script>
