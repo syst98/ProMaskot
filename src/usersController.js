@@ -31,16 +31,16 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
                   <div class="card-content ">
                     <span class="card-title activator grey-text text-darken-4">Completa tu informacion <i class="mdi-navigation-more-vert right"></i></span>
                     <div>
-                        <label class="form-label"><i class="fas fa-tag"></i> Telefono</label>
+                        <label class="form-label grey-text text-darken-4"> Telefono</label>
                         <input type="tel" class="form-control" name="telefono" required>
                     </div>
                     <div>
-                        <label class="form-label"><i class="fas fa-audio-description"></i> Direccion</label>
+                        <label class="form-label grey-text text-darken-4"> Direccion</label>
                         <input type="text" class="form-control" name="direccion" required>
                     </div>
                   </div>
                   <div class="card-image waves-effect waves-block waves-light">
-                  <button class="btn btn-primary">Enviar</button>
+                  <button>Enviar</button>
                 </div>
               </div>
           </div>
