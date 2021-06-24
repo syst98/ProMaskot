@@ -29,7 +29,7 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
       <div class="col s12 m4 24 header text_b center">
                <div class="card">
                   <div class="card-content ">
-                    <span class="card-title activator grey-text text-darken-4">Completa tu informacion <i class="mdi-navigation-more-vert right"></i></span>
+                    <span class="card-title activator grey-text text-darken-4">Completa tu informacion</span>
                     <div>
                         <label class="form-label grey-text text-darken-4" style="font-size:25px"> Telefono</label>
                         <input type="tel" class="form-control" name="telefono" required style="font-size: 34px;">
