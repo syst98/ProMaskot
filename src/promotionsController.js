@@ -49,7 +49,7 @@ promocion.
         console.log(doc.id);
         const promociones = doc.data();
         tasksContainer.innerHTML += `
-            <tr class="text-center" data-id="${doc.id}">
+              <tr>
                 <td>${promociones.name}</td>
                 <td>${promociones.description}</td>
                 <td>${promociones.discount}</td>
@@ -60,11 +60,11 @@ promocion.
                 <td>${promociones.coupons}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <button class="btn btn-outline-danger btn-delete" data-id="${doc.id}">Borrar</button>
-                        <button class="btn btn-outline-warning btn-edit" data-id="${doc.id}">Editar</button>
+                        <button class="btn btn-delete" data-id="${doc.id}">Borrar</button>
+                        <button class="btn btn-edit" data-id="${doc.id}">Editar</button>
                     </div>
                 </td>
-            </tr>`;
+              </tr>`;
         //obtiene etiqueta del formulario
         let agregarPromociones = document.getElementById("agregarPromociones")
         const btnsDelete = tasksContainer.querySelectorAll(".btn-delete");

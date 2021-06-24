@@ -1,9 +1,10 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
 
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
 
@@ -14,128 +15,162 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <title>ProMaskot promociones</title>
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-light bg-dark text-light" id="navar">
-    </nav>
-    <br>
-    <br>
-    <br>
-    <div class="container" style="display: none;">
-        <div class="row justify-content-end">
-            <div class="row justify-content-md-center">
-            <div class="col-md-6 fs-4 text-center align-self-center blue-200">Hola <output id="nombre" style="font-size: 32px;"></output> </div>
-            <figure class="col-md-4 fs-4 justify-content-md-center"><img id="avatar" alt="Avatar"> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure>
-        </div>
-        <br>
-        <br>
-        <br>
-        <p class="lead">
-          <div class="fw-bold border-white bg-black"></div>
-        </p>
-    </div>
-    </div>
-      <div class="container">
-          <div class="row">
-                <form id="agregarPromociones">
-                    <div class="container">
-                        <div class="row justify-content-md-center">
-                            <p class="text-center display-5"><i class="fas fa-tags"></i> Agregar una promocion</p>
-                        </div>
-                    </div>  
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="form-label"><i class="fas fa-tag"></i> Nombre de la promocion</label>
-                            <input type="text" class="form-control" name="nombre" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label"><i class="fas fa-audio-description"></i> Descripción</label>
-                            <input type="text" class="form-control" name="descripcion" required>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="form-label"><i class="fas fa-percent"></i> Descuento</label>
-                            <input type="number" class="form-control" name="descuento" required>
-                        </div>
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="fas fa-asterisk"></i> Codigo de descuento</label>
-                            <input type='text' class="form-control" name='codigo' required />
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="fas fa-calendar-day"></i> Fecha Inicio</label>
-                            <input type='datetime-local' class="form-control" name='fechaInicio' required />
-                        </div>
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="fas fa-calendar-day"></i> Fecha Final</label>
-                            <input type='datetime-local' class="form-control" name='fechaFinal' required/>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="far fa-flag"></i> Puntos para adquirir</label>
-                            <input type='number' class="form-control" name='puntos' required/>
-                        </div>
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="fas fa-user-tag"></i> Promociones a otorgar</label>
-                            <input type='number' class="form-control" name='cupones' required/>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="far fa-flag"></i> Nombrar archivo</label>
-                            <input type='text' class="form-control" name='fileName' required/>
-                        </div>
-                        <div class='col-md-6'>
-                            <label class="form-label"><i class="fas fa-user-tag"></i> Agregando un archivo</label>
-                            <input type='file' class="form-control" name='file' accept=".jpg,.png" required/>
-                        </div>
-                    </div>
-                    <br>
-                    <button class="btn btn-primary">Enviar</button>
-            </form>
+
+    <link href="css/nucleo.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body id="top" class="scrollspy">
+
+    <div class="navbar-fixed">
+        <nav id="nav_f" class="default_color" role="navigation">
+            <div id="navar">
+
             </div>
-            </div>
-            <br>
-            <div>
-                <div class="container">
-                  <div class="row justify-content-md-center">
-                    <table class="table table-dark table-striped">
-                        <thead>
-                        <tr class="text-center">
-                            <th scope="col">Nombre de promocion</th>
-                            <th scope="col">Descripcion</th>
-                            <th scope="col">Descuento</th>
-                            <th scope="col">Fecha de inicio</th>
-                            <th scope="col">Fecha final</th>
-                            <th scope="col">Codigo</th>
-                            <th scope="col">Puntos</th>
-                            <th scope="col">Cupones</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                        </thead>
-                        <tbody id="leerPromociones">
-                        </tbody>  
-                    </table> 
-                  </div>
+        </nav>
+    </div>
+
+    <div id="intro" class="section scrollspy">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h2 class="center header text_h2"> Agregar una promocion</h2>
                 </div>
-              </div> 
-              <br>
-    <footer class="text-center">
-        <p>Copyright &copy; 2021 | Desarrollado por: Sanchez Felix Eduardo Quetzalcoatl. | <a class="text-muted">Version 1.0.1</a></p>
+
+                <div class="col s12">
+                    <div class="center promo promo-example" style="text-align: -webkit-center;">
+                        <form id="agregarPromociones">
+                            <div class="row">
+                                <div class="col s6">
+                                    <label class="form-label"> Nombre de la promocion</label>
+                                    <input type="text" class="form-control" name="nombre" required>
+                                </div>
+                                <div class="col s6">
+                                    <label class="form-label"> Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion" required>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col s6">
+                                    <label class="form-label"> Descuento</label>
+                                    <input type="number" class="form-control" name="descuento" required>
+                                </div>
+                                <div class="col s6">
+                                    <label class="form-label"> Codigo de descuento</label>
+                                    <input type='text' class="form-control" name='codigo' required />
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col s6">
+                                    <label class="form-label"> Puntos para adquirir</label>
+                                    <input type='number' class="form-control" name='puntos' required />
+                                </div>
+                                <div class="col s6">
+                                    <label class="form-label"><i class="fas fa-user-tag"></i> Promociones a
+                                        otorgar</label>
+                                    <input type='number' class="form-control" name='cupones' required />
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col s6">
+                                    <label class="form-label"> Nombrar archivo</label>
+                                    <input type='text' class="form-control" name='fileName' required />
+                                </div>
+                                <div class="col s6">
+                                    <div class="col s12">
+                                        <label class="form-label"> Agregando una imagen</label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="col s12">
+                                        <input type='file' class="form-control" name='file' accept=".jpg,.png"
+                                            required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+                                    <div class="col s12">
+                                        <label class="form-label"> Fecha Inicio</label>
+                                    </div>
+                                    <BR>
+                                    <BR>
+                                    <div class="col s12">
+                                        <input type='datetime-local' class="form-control" name='fechaInicio' required />
+                                    </div>
+                                </div>
+                                <div class="col s6">
+                                    <div class="col s12">
+                                        <label class="form-label"> Fecha Final</label>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="col s12">
+                                        <input type='datetime-local' class="form-control" name='fechaFinal' required />
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section scrollspy" id="work">
+            <div class="container">
+                <h2 class="header text_b" style="text-align: center;"> Promociones </h2>
+                <div class="row">
+                    <div class="col s12 m12 14" style="text-align: -webkit-center;">
+                        <table class="header">
+                            <thead>
+                                <tr id="header_table" style="text-align: center;">
+                                    <th style="text-align: center;">Nombre</th>
+                                    <th style="text-align: center;">Descripcion</th>
+                                    <th style="text-align: center;">Descuento</th>
+                                    <th style="text-align: center;">Fecha_Inicio</th>
+                                    <th style="text-align: center;">Fecha_Final</th>
+                                    <th style="text-align: center;">Codigo</th>
+                                    <th style="text-align: center;">Puntos</th>
+                                    <th style="text-align: center;">Cupones</th>
+                                    <th style="text-align: center;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leerPromociones">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+    <footer id="contact" class="page-footer default_color scrollspy">
+        <div class="container">
+            <div class="row">
+
+                <div class="center">
+                    <h5 class="white-text">Sanchez Felix Eduardo Quetzalcoatl</h5>
+                    <p class="grey-text text-lighten-4">
+                        Copyright &copy; 2021 | Programacion WEB | 3NV41 | Version 1.0.1 | <a
+                            href="./acerca_de.html">Ver Mas</a>
+                    </p>
+                </div>
     </footer>
-    <br> 
-  </body>
+
     <script src="./src/conection.js"></script>
     <script src="./src/promotionsController.js"></script>
+</body>
+
 </html>
