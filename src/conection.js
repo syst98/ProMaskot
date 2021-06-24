@@ -34,25 +34,23 @@ var infoUsuario
               if(usuarioAuth.email==="sistema.informatic.98@gmail.com"){
                 document.getElementById("navar").innerHTML='';
                 document.getElementById("navar").innerHTML+=`
-              <div class="container-fluid">
-                    <a class="navbar-brand" href="./index.html">
-                      <img src="https://firebasestorage.googleapis.com/v0/b/sistemainformatics98.appspot.com/o/LOGO5.png?alt=media&token=003c6827-4e91-4e7e-a6b9-c680a77b60c4" alt="imagen-walmart" width="90" height="40">
-                    </a>
-                    <a class="navbar-brand text-light" href="./promociones.html">Promociones</a>
-                    <a class="navbar-brand text-light" href="./estadisticas.html">Estadisticas</a>
-                    <button class="navbar-brand btn btn btn-link text-light" type="button" onclick="terminaSesión()">Terminar Sesión</button>
-              </div>
+              <div class="nav-wrapper"><a id="logo-container" href="#top" class="brand-logo"><img src="https://firebasestorage.googleapis.com/v0/b/sistemainformatics98.appspot.com/o/LOGO5.png?alt=media&token=003c6827-4e91-4e7e-a6b9-c680a77b60c4" alt="imagen-walmart" width="90" height="40"></a>
+                    <ul id="nav-mobile" class="right side-nav">
+                      <li><a href="./promociones.html">Promociones</a></li>
+                      <li><a href="./estadisticas.html">Estadisticas</a></li>
+                       <li><a type="button" onclick="terminaSesión()">Terminar Sesión</a></li>
+                    </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                  </div>
               `
               }
               else{
                 document.getElementById("navar").innerHTML='';
                 document.getElementById("navar").innerHTML+=`
-                <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">
-                  <img src="https://firebasestorage.googleapis.com/v0/b/sistemainformatics98.appspot.com/o/LOGO5.png?alt=media&token=003c6827-4e91-4e7e-a6b9-c680a77b60c4" alt="imagen-walmart" width="90" height="40">
-                </a>
-                <button class="navbar-brand btn btn btn-link text-light" type="button" onclick="terminaSesión()">Terminar Sesión</button>
-                </div>
+                  <div class="nav-wrapper"><a id="logo-container" href="#top" class="brand-logo"><img src="https://firebasestorage.googleapis.com/v0/b/sistemainformatics98.appspot.com/o/LOGO5.png?alt=media&token=003c6827-4e91-4e7e-a6b9-c680a77b60c4" alt="imagen-walmart" width="90" height="40"></a>
+                    <ul id="nav-mobile" class="right side-nav">
+                       <li><a type="button" onclick="terminaSesión()">Terminar Sesión</a></li>
+                    </ul><a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                  </div>
                 `
               }
               ;
