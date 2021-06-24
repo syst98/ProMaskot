@@ -19,16 +19,16 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
       document.getElementById("agregarUsuarios").innerHTML += `
             <div class="container">
             <div class="row justify-content-md-center">
-                <p class="text-center"><i class="fas fa-tags"></i> Gracias por tu registro</p>
+                <p style="text-align: center"><i class="fas fa-tags"></i> Gracias por tu registro</p>
             </div>
             </div>`;
     }
     else {
       document.getElementById("agregarUsuarios").innerHTML = '';
       document.getElementById("agregarUsuarios").innerHTML += `
-      <div class="col s12 m4 l4">
+      <div class="col s12 m4 l4 header text_b center">
                <div class="card">
-                  <div class="card-content">
+                  <div class="card-content ">
                     <span class="card-title activator grey-text text-darken-4">Completa tu informacion <i class="mdi-navigation-more-vert right"></i></span>
                     <div>
                         <label class="form-label"><i class="fas fa-tag"></i> Telefono</label>
