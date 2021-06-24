@@ -34,26 +34,16 @@ promocion.
       if(hoy.toISOString().split(".")[0]<=promociones.timeEnd){
       var refArch = sg.ref(promociones.rute);
       sg.refFromURL(refArch).getDownloadURL().then(function(url) {
-        
         document.getElementById("promocionesList").innerHTML +=`
-      <div class="card mb-3 bg-dark border-light" style="max-width: 540px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                  <img src="${url}" style="height: 120px; weight:30px" alt="...">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body" data-id="${doc.id}">
-                      <h5 class="card-title">${promociones.name}</h5>
-                      <p class="card-text">${promociones.description}.</p>
-                      <p class="card-text"><small class="text-light">Desde ${promociones.timeStart.split('T')[0]} ${promociones.timeStart.split('T')[1]} Hasta ${promociones.timeEnd.split("T")[0]} ${promociones.timeEnd.split("T")[1]}</small></p>
-                      <div class="row justify-content-md-center">
-                        <a href="./inicio.html" class="btn btn-primary">Ver la promocion</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      </div>      
-      `;
+        <div  class="col s12 m4 l4">
+              <div class="center promo promo-example">
+              <img src="${url}" style="height: 120px; weight:30px" alt="...">
+                <h5 class="promo-caption">${promociones.name}</h5>
+                <p class="center">${promociones.description}</p>
+                <p class="light center">Desde ${promociones.timeStart.split('T')[0]} ${promociones.timeStart.split('T')[1]} Hasta ${promociones.timeEnd.split("T")[0]} ${promociones.timeEnd.split("T")[1]}</p>
+              </div>
+            </div>
+        `
       }).catch(function(error) {
         console.log(error)
       });
