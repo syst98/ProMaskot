@@ -1,69 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProMaskot promociones</title>
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>ProMaskot promociones</title>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+  <!-- CSS  -->
+  <link href="css/nucleo.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" type="text/css" rel="stylesheet" >
 
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    
-  </head>
-<body class="d-flex h-100 text-white bg-dark">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <nav class="navbar fixed-top navbar-light bg-dark text-light" id="navar"></nav>
-    <br>
-    <br>
-    <br>
-      <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="row justify-content-md-center">
-            <div class="col-md-6 fs-4 display-4 text-center align-self-center blue-200">Hola <output id="nombre" style="font-size: 32px;"></output> </div>
-            <figure class="col-md-4 fs-4 display-4 justify-content-md-center"><img id="avatar" alt="Avatar"> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure>
-        </div>
-        <br>
-        <br>
-        <br>
-        <p class="lead">
-          <div class="fw-bold border-white bg-white"></div>
-        </p>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+</head>
+<body id="top" class="scrollspy">
+
+<!-- Pre Loader -->
+
+ <div class="navbar-fixed" id="navar">
+  </div>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="text_h center header cd-headline letters type">
+      <span>Hola <output id="nombre" style="font-size: 32px;"></output></span> 
+      <span class="cd-words-wrapper waiting">
+        <figure><img id="avatar" alt="Avatar"> <output class="lead" id="email"><progress max="100">Cargando…</progress></output></figure>
+      </span>
+    </h1>
+
     </div>
-    </div>
-    <div class="container border-top">
-      <div class="row justify-content-md-center">
-          <p class="text-center display-2"> Promociones</p>
+  </div>
+
+ <div id="intro" class="section scrollspy">
+  <div class="container">
+      <!--   Icon Section   -->
+    <div class="row">
+          <div  class="col s12">
+            <h2 class="center header text_h2"> Promociones</h2>
+          </div>
+            <div id="promocionesList">
+            </div>
       </div>
     </div>
-    <div class="container">
-        <div id="promocionesList" class="row justify-content-md-center">
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <form id="agregarUsuarios" class="row justify-content-md-center">
+</form>
+
+
+  <footer id="contact" class="page-footer default_color scrollspy">
+    <div class="container">  
+ <div class="row">
+
+        <div class="center">
+          <h5 class="white-text">Sanchez Felix Eduardo Quetzalcoatl</h5>
+          <p class="grey-text text-lighten-4">
+            Copyright &copy; 2021 | Programacion WEB | 3NV41 | Version 1.0.1</p>
         </div>
-    </div>  
-    <br>
-    <br>
-    <br>
-    <div class="container">
-      <form id="agregarUsuarios" class="row justify-content-md-center">
-      </form>
-    </div>
-    <br>
-    <footer class="text-center">
-      <p>Copyright &copy; 2021 | Desarrollado por: Sanchez Felix Eduardo Quetzalcoatl. | <a class="text-muted">Version 1.0.1</a></p>
   </footer>
-    <br> 
-    </div>
-</body>
-<script src="./src/conection.js"></script>
+  </body>
+  <script src="./src/conection.js"></script>
 <script src="./src/usersController.js"></script>
 <script src="./src/components/nav.js"></script>
 </html>
+
