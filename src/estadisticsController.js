@@ -13,34 +13,25 @@ promocion.
   onSnapshot(
   snapshot => {
     usuariosRegistrados.innerHTML +=`
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><i class="fas fa-tags"></i> Promociones</h5>
-          <p class="card-text text-center text-muted">${snapshot.size} promociones registradas</p>
-        </div>
-      </div>
-    </div>
+    <div class="col s12 m6 14">
+    <p class="card-title activator grey-text text-darken-2" style="font-size: 25px;">Promociones</p>
+    <p class="card-title activator text-lighten-4 center" style="font-size: 20px;">${snapshot.size} promociones registradas</p>
+  </div>
     `;
     document.getElementById("myfirstchart").innerHTML ='';
     snapshot.forEach(doc => {
     const promociones = doc.data();
-    var porcentaje
-    if(((parseInt(promociones.used)*100)/parseInt(promociones.coupons)).toFixed()<50){
-      porcentaje="bg-success"
-    }
-    if(((parseInt(promociones.used)*100)/parseInt(promociones.coupons)).toFixed()>50){
-      porcentaje="bg-danger"
-    }
     document.getElementById("myfirstchart").innerHTML +=`
-    <div class="md">
-          <div class="card-title">${promociones.name}</div>
-          <div class="progress">
-            <div class="card-list progress-bar progress-bar-striped progress-bar-animated ${porcentaje}" role="progressbar" style="width:${((parseInt(promociones.used)*100)/parseInt(promociones.coupons)).toFixed()}%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">${((parseInt(promociones.used)*100)/parseInt(promociones.coupons)).toFixed()}%</div>
+    <div>
+        <p class="card-title activator grey-text text-darken-2" style="font-size: 25px;">${promociones.name}</p>
+        <p class="card-title activator grey-text text-darken-3">
+          <div id="progressbar">
+            <div style="width:${((parseInt(promociones.used)*100)/parseInt(promociones.coupons)).toFixed()}%" aria-valuemin="0" aria-valuemax="100">
+            </div>
           </div>
-          <div class="card-list text-center">
-          <p class="text-muted"> Quedan ${promociones.used} cupones de  ${promociones.coupons}</p>
-    </div>
+        </p>
+        <p class="card-title activator text-lighten-4 center" style="font-size: 18px;"> Quedan ${promociones.used} cupones de  ${promociones.coupons}</p>
+  </div>
     `
   })
 },
@@ -52,14 +43,10 @@ usuario.
   snapshot => {
     console.log(snapshot.size);
     usuariosRegistrados.innerHTML +=`
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><i class="fas fa-users"></i> Registrados</h5>
-          <p class="card-text text-center text-muted">${snapshot.size} usuarios registrados</p>
-        </div>
-      </div>
-    </div>
+    <div class="col s12 m6 14">
+    <p class="card-title activator grey-text text-darken-2" style="font-size: 25px;">Usuarios Registrados</p>
+    <p class="card-title activator text-lighten-4 center" style="font-size: 20px;"> ${snapshot.size} usuarios registrados</p>
+  </div>
     `;
     snapshot.forEach(doc => {
       console.log(doc.id);

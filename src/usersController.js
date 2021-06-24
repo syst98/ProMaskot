@@ -56,7 +56,7 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
         address,
         level: "user",
         coupons: ['MbVjhFnai8T9O5G0aqaF'],
-        points: 3,
+        points: 11,
       })
     }
     var agregarUsuarios= document.getElementById("agregarUsuarios")
