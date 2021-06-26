@@ -12,7 +12,7 @@ const hoy = new Date(tiempoTranscurrido);
 
 var user = firebase.auth().onAuthStateChanged(userAuth => {
   usuario.where("mail", "==", userAuth.email).onSnapshot(async snapshot => {
-    
+
     if (await snapshot.size >= 1) {
       console.log(snapshot.size)
       document.getElementById("agregarUsuarios").innerHTML = '';
@@ -59,7 +59,7 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
         points: 11,
       })
     }
-    var agregarUsuarios= document.getElementById("agregarUsuarios")
+    var agregarUsuarios = document.getElementById("agregarUsuarios")
     //Funcion agrega datos a "Usuarios"
     agregarUsuarios.addEventListener("submit", (e) => {
       e.preventDefault()
@@ -76,29 +76,29 @@ var user = firebase.auth().onAuthStateChanged(userAuth => {
 });
 
 
-var cupones=[]
+var cupones = []
 //obtener promociones
 var validacionUsuario = firebase.auth().onAuthStateChanged(userAuth => {
-  usuario.where("mail", "==", userAuth.email).onSnapshot( snapshot => {
+  usuario.where("mail", "==", userAuth.email).onSnapshot(snapshot => {
     snapshot.forEach(registros => {
       var usr = registros.data();
       console.log(usr.points)
-      if(parseInt(usr.points) >= 1){
-      cupones[cupones]=usr.coupons
-      console.log(Array.isArray(cupones));
-      promocion.onSnapshot(snapshot => {
-       document.getElementById("promocionesList").innerHTML =''; 
-        console.log(snapshot.size);
-        if (snapshot.size >= 1) {
-          snapshot.forEach(doc => {
-            console.log(doc.id);
-            const promociones = doc.data();
-            console.log(promociones.timeEnd.split("T")[1])
-            console.log(promociones.points)
-            if (hoy.toISOString().split(".")[0] >= promociones.timeStart && hoy.toISOString().split(".")[0] <= promociones.timeEnd && usr.points >= promociones.points && promociones.used >=1 && usr.points >= 1) {
-              var refArch = sg.ref(promociones.rute);
-              sg.refFromURL(refArch).getDownloadURL().then(function (url) {
-                document.getElementById("promocionesList").innerHTML += `   
+      if (parseInt(usr.points) >= 1) {
+        cupones[cupones] = usr.coupons
+        console.log(Array.isArray(cupones));
+        promocion.onSnapshot(snapshot => {
+          document.getElementById("promocionesList").innerHTML = '';
+          console.log(snapshot.size);
+          if (snapshot.size >= 1) {
+            snapshot.forEach(doc => {
+              console.log(doc.id);
+              const promociones = doc.data();
+              console.log(promociones.timeEnd.split("T")[1])
+              console.log(promociones.points)
+              if (hoy.toISOString().split(".")[0] >= promociones.timeStart && hoy.toISOString().split(".")[0] <= promociones.timeEnd && usr.points >= promociones.points && promociones.used >= 1 && usr.points >= 1) {
+                var refArch = sg.ref(promociones.rute);
+                sg.refFromURL(refArch).getDownloadURL().then(function (url) {
+                  document.getElementById("promocionesList").innerHTML += `   
                 <div  class="col s12 m4 l4">
                   <div class="center promo promo-example">
                   <img src="${url}" style="height: 120px; weight:30px" alt="...">
@@ -109,47 +109,47 @@ var validacionUsuario = firebase.auth().onAuthStateChanged(userAuth => {
                   </div>
                 </div>
                     `;
-                var promocionesList = document.getElementById("promocionesList")
-                var btnsSelected = promocionesList.querySelectorAll(".btn-selected");
-                btnsSelected.forEach((btn) =>{
-                  btn.addEventListener("click", async (e) => {
-                    document.getElementById("promocionesList").innerHTML ='';
-                    try {
-                      //elimina puntos por uso del cupon y los mete en su wallet
-                      const getPromo = (id) => db.collection("Promociones").doc(id).get();
-                      const info=await getPromo(e.target.dataset.id)                  
-                      const promocionUsuario= info.data()
-                      /** **/
-                            await usuario.doc(registros.id).update({
-                                  coupons: firebase.firestore.FieldValue.arrayUnion(e.target.dataset.id),
-                                  points: (parseInt(usr.points) - parseInt(promocionUsuario.points))
-                                })
-                                document.getElementById("promocionesList").innerHTML =' ';
-                      //elimina un cupon de las promociones
-                     await promocion.doc(e.target.dataset.id).update({
-                        used: (parseInt(promociones.used) - 1)
-                      })
-                      document.getElementById("promocionesList").innerHTML ='';
-                      //await db.collection("Promociones").doc(e.target.dataset.id).delete();
-                    } catch (error) {
-                      console.log(error);
-                    }
-                  })
+                  var promocionesList = document.getElementById("promocionesList")
+                  var btnsSelected = promocionesList.querySelectorAll(".btn-selected");
+                  btnsSelected.forEach((btn) => {
+                    btn.addEventListener("click", async (e) => {
+                      document.getElementById("promocionesList").innerHTML = '';
+                      try {
+                        //elimina puntos por uso del cupon y los mete en su wallet
+                        const getPromo = (id) => db.collection("Promociones").doc(id).get();
+                        const info = await getPromo(e.target.dataset.id)
+                        const promocionUsuario = info.data()
+                        /** **/
+                        await usuario.doc(registros.id).update({
+                          coupons: firebase.firestore.FieldValue.arrayUnion(e.target.dataset.id),
+                          points: (parseInt(usr.points) - parseInt(promocionUsuario.points))
+                        })
+                        document.getElementById("promocionesList").innerHTML = ' ';
+                        //elimina un cupon de las promociones
+                        await promocion.doc(e.target.dataset.id).update({
+                          used: (parseInt(promociones.used) - 1)
+                        })
+                        document.getElementById("promocionesList").innerHTML = '';
+                        //await db.collection("Promociones").doc(e.target.dataset.id).delete();
+                      } catch (error) {
+                        console.log(error);
+                      }
+                    })
+                  });
+                }).catch(function (error) {
+                  console.log(error)
                 });
-              }).catch(function (error) {
-                console.log(error)
-              });
-            }
-          })
-        }
-        else {
-          document.getElementById("promocionesList").innerHTML = '';
-          document.getElementById("promocionesList").innerHTML += `
+              }
+            })
+          }
+          else {
+            document.getElementById("promocionesList").innerHTML = '';
+            document.getElementById("promocionesList").innerHTML += `
           <h2 class="header text_b center"> No hay promociones, esperalas pronto ProMaskot </h2>`;
-        }
-      },
-        error => console.error(error));
-    }
-  })
+          }
+        },
+          error => console.error(error));
+      }
+    })
   })
 });
