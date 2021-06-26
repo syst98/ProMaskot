@@ -43,13 +43,11 @@ tr:hover {
  #progressbar {
   background-color: rgba(49, 140, 168, 0.377);
   border-radius: 13px;
-  /* (height of inner div) / 2 + padding */
   padding: 3px;
 }
 
 #progressbar>div {
   background-color: rgb(49, 140, 168);
-  /* Adjust with JavaScript */
   height: 20px;
   border-radius: 10px;
 }
@@ -126,17 +124,11 @@ nav ul a {
   padding: 0px 15px;
 }
 
-/* -------------------------------- 
-
-xtype 
-
--------------------------------- */
 .cd-headline.type .cd-words-wrapper {
   vertical-align: top;
   overflow: hidden;
 }
 .cd-headline.type .cd-words-wrapper::after {
-  /* vertical bar */
   content: '';
   position: absolute;
   right: 0;
@@ -236,27 +228,26 @@ xtype
 }
 
 
-/* Preloader */
 #preloader {
   position: fixed;
   top:0;
   left:0;
   right:0;
   bottom:0;
-  background-color:#fff; /* change if the mask should have another color then white */
-  z-index:1200; /* makes sure it stays on top */
+  background-color:#fff;
+  z-index:1200;
 }
 
 #status {
   width:200px;
   height:200px;
   position:absolute;
-  left:50%; /* centers the loading animation horizontally one the screen */
-  top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(../img/status.gif); /* path to your loading animation */
+  left:50%;
+  top:50%; 
+  background-image:url(../img/status.gif);
   background-repeat:no-repeat;
   background-position:center;
-  margin:-100px 0 0 -100px; /* is width and height divided by two */
+  margin:-100px 0 0 -100px;
 }
 
 @media only screen and (max-width: 480px) {
